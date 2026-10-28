@@ -49,3 +49,15 @@ npm start
 ## Git
 
 Этап 1 ведётся в `feat/stage-1-home`. Изменения в `main` вносятся через Pull Request после разрешения владельца. Force push не используется.
+
+## Превью первого этапа на GitHub Pages
+
+Workflow `.github/workflows/pages.yml` проверяет и публикует ветку `feat/stage-1-home`, не объединяя её с `main`. В GitHub откройте Settings → Pages → Build and deployment → Source: GitHub Actions. Если окружение `github-pages` ограничивает ветки, разрешите `feat/stage-1-home` в Settings → Environments → github-pages. После включения запустите Actions → Preview on GitHub Pages → Run workflow, выбрав эту ветку, либо отправьте новый коммит.
+
+Статическая сборка:
+
+```sh
+GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/svet-03 npm run build
+```
+
+Результат — `out/`, для раздачи любым статическим сервером. Это только превью этапа 1: GitHub Pages не исполняет серверный код Next.js и не подходит для запланированного серверного бронирования/админки. Обычная `npm run build` по-прежнему создаёт серверную Next.js-сборку. После просмотра этапа переключение публикуемой ветки выполняется отдельно.
