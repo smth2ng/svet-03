@@ -113,3 +113,17 @@
   .hall-gallery-image { aspect-ratio: 1; }
   .hall-gallery figcaption { font-size: 11px; }
 }
+label { display: grid; gap: 8px; margin-block: 20px; font-size: 16px; }
+input,select { width: 100%; max-width: 480px; min-width: 0; padding: 12px; border: 1px solid var(--line); background: white; color: var(--ink); font: inherit; }
+button { cursor: pointer; font: inherit; padding: 12px; border: 1px solid var(--line); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+input:focus-visible,select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.hour-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; margin-block: 20px; font: 12px/1.7 var(--font-mono); }
+.hour-grid span { padding: 8px; border: 1px solid var(--line); }
+.hour-grid .occupied { color: var(--muted); background: #dfe3dc; }
+.booking-placeholder { overflow-wrap: anywhere; }
+.admin-filters { display: flex; flex-wrap: wrap; gap: 24px; margin-block: 32px; }
+.admin-list { display: grid; gap: 24px; margin-block: 32px; }
+.admin-list article { border: 1px solid var(--line); padding: 24px; overflow-wrap: anywhere; }
+.admin-list p { margin-block: 16px; }
+.hour-grid .selected { background: var(--accent); color: white; }
