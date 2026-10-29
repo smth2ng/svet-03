@@ -18,7 +18,7 @@ export default function HallsPage() {
       <section aria-label="Каталог залов">
         <div className="room-grid">{rooms.map((hall) => <HallCard key={hall.slug} hall={hall} />)}</div>
       </section>
-      <p className="catalog-note">СВЕТ / 03 — вымышленная московская фотостудия. Изображения — временные авторские иллюстрации. Реальные услуги не оказываются; бронирование пока недоступно.</p>
+      <p className="catalog-note">СВЕТ / 03 — вымышленная московская фотостудия. Изображения — временные авторские иллюстрации. Реальные услуги не оказываются; заявки только тестовые.</p>
     </div>
   );
 }

@@ -1,8 +1,9 @@
+import { BookingPanel } from '@/components/booking-panel';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { HallCard } from '@/components/hall-card';
-import { formatPrice, rooms, type Hall } from '@/data/rooms';
+import { rooms, type Hall } from '@/data/rooms';
 
 export function HallPage({ hall }: { hall: Hall }) {
   return (
@@ -41,16 +42,7 @@ export function HallPage({ hall }: { hall: Hall }) {
             <ul>{hall.equipment.map((item) => <li key={item}>{item}</li>)}</ul>
             <p className="gallery-note">Концептуальная комплектация демонстрационного зала.</p>
           </section>
-          <section className="booking-placeholder" aria-labelledby="booking-info-title">
-            <p className="eyebrow">АРЕНДА / УСЛОВИЯ</p>
-            <h3 id="booking-info-title">{formatPrice(hall.hourlyRate)} ₽ <span>/ час</span></h3>
-            <p>Минимальная аренда — 2 часа.<br />От {formatPrice(hall.hourlyRate * 2)} ₽ за съёмку.</p>
-            <p>10:00–22:00 по Москве.</p>
-            <div className="booking-status">
-              <strong>Бронирование появится позже</strong>
-              <p>Сейчас можно изучить пространства. Это демонстрационный проект: реальные услуги не оказываются, заявки не принимаются.</p>
-            </div>
-          </section>
+          <BookingPanel slug={hall.slug} rate={hall.hourlyRate} />
         </aside>
       </div>
       <section className="section shell" aria-labelledby="other-halls-title">
